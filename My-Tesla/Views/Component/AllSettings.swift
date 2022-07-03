@@ -42,7 +42,9 @@ struct AllSettings: View {
         VStack{
             CategoryHeader(title: "All Settings", showEdit: false)
             LazyVGrid(columns: [GridItem(.fixed(180)),GridItem(.fixed(180))],spacing: 10) {
-                SettingBlock(icon: "car.fill", title: "Controls",subtitle: "Car Locked")
+                NavigationLink(destination: CarControlView()) {
+                    SettingBlock(icon: "car.fill", title: "Controls",subtitle: "Car Locked")
+                }
                 SettingBlock(icon: "fanblades.fill", title: "Climate",subtitle: "Interior 68F",backGroundColor: Color.blue)
                 SettingBlock(icon: "location.fill", title: "Location",subtitle: "New Delhi")
                 SettingBlock(icon: "checkerboard.shield", title: "Security",subtitle: "0 events detected")

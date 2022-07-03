@@ -10,17 +10,14 @@ import SwiftUI
 struct GeneralButton: View {
     var icon:String
     var body: some View {
-        Button(action: {}) {
-            Image(systemName: icon)
-                .imageScale(.large)
-                .frame(width:44 , height: 44)
-                .background(Color.white.opacity(0.05))
-                .clipShape(Circle())
-                .overlay {
-                    Circle().stroke(Color.white.opacity(0.1),lineWidth: 0.5)
-                }
-        }
-        
+        Image(systemName: icon)
+            .imageScale(.large)
+            .frame(width:44 , height: 44)
+            .background(Color.white.opacity(0.05))
+            .clipShape(Circle())
+            .overlay {
+                Circle().stroke(Color.white.opacity(0.1),lineWidth: 0.5)
+            }
     }
 }
 
