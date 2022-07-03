@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B74A5042871EB7400E5B2C2 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B74A5032871EB7400E5B2C2 /* ActionButton.swift */; };
+		0B74A5082871EF8B00E5B2C2 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B74A5072871EF8B00E5B2C2 /* CategoryView.swift */; };
+		0B74A50A2871EFAA00E5B2C2 /* ActionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B74A5092871EFAA00E5B2C2 /* ActionItem.swift */; };
+		0B74A50C2871F2C600E5B2C2 /* AllSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B74A50B2871F2C600E5B2C2 /* AllSettings.swift */; };
 		0B764CBA2870ABFB001C3A1D /* My_TeslaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B764CB92870ABFB001C3A1D /* My_TeslaApp.swift */; };
 		0B764CBC2870ABFB001C3A1D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B764CBB2870ABFB001C3A1D /* ContentView.swift */; };
 		0B764CBE2870AC00001C3A1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B764CBD2870AC00001C3A1D /* Assets.xcassets */; };
@@ -15,9 +19,14 @@
 		0B764CCC2870B032001C3A1D /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B764CCB2870B032001C3A1D /* HomeHeaderView.swift */; };
 		0B764CD02870B5DA001C3A1D /* GeneralButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B764CCF2870B5DA001C3A1D /* GeneralButton.swift */; };
 		0B764CD42870B713001C3A1D /* CarSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B764CD32870B713001C3A1D /* CarSection.swift */; };
+		0BE976D22872032000338FDD /* CarControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE976D12872032000338FDD /* CarControlView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B74A5032871EB7400E5B2C2 /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
+		0B74A5072871EF8B00E5B2C2 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
+		0B74A5092871EFAA00E5B2C2 /* ActionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionItem.swift; sourceTree = "<group>"; };
+		0B74A50B2871F2C600E5B2C2 /* AllSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSettings.swift; sourceTree = "<group>"; };
 		0B764CB62870ABFB001C3A1D /* My-Tesla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My-Tesla.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B764CB92870ABFB001C3A1D /* My_TeslaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_TeslaApp.swift; sourceTree = "<group>"; };
 		0B764CBB2870ABFB001C3A1D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -27,6 +36,7 @@
 		0B764CCB2870B032001C3A1D /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
 		0B764CCF2870B5DA001C3A1D /* GeneralButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralButton.swift; sourceTree = "<group>"; };
 		0B764CD32870B713001C3A1D /* CarSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSection.swift; sourceTree = "<group>"; };
+		0BE976D12872032000338FDD /* CarControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarControlView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +50,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B74A5052871EF5900E5B2C2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0B74A5092871EFAA00E5B2C2 /* ActionItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		0B764CAD2870ABFB001C3A1D = {
 			isa = PBXGroup;
 			children = (
@@ -59,9 +77,9 @@
 		0B764CB82870ABFB001C3A1D /* My-Tesla */ = {
 			isa = PBXGroup;
 			children = (
+				0B74A5052871EF5900E5B2C2 /* Model */,
 				0B764CC72870AE3D001C3A1D /* Views */,
 				0B764CB92870ABFB001C3A1D /* My_TeslaApp.swift */,
-				0B764CBB2870ABFB001C3A1D /* ContentView.swift */,
 				0B764CBD2870AC00001C3A1D /* Assets.xcassets */,
 				0B764CBF2870AC00001C3A1D /* Preview Content */,
 			);
@@ -80,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				0B764CC82870AE46001C3A1D /* Component */,
+				0BE976D0287202F900338FDD /* Core */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -91,8 +110,20 @@
 				0B764CCB2870B032001C3A1D /* HomeHeaderView.swift */,
 				0B764CCF2870B5DA001C3A1D /* GeneralButton.swift */,
 				0B764CD32870B713001C3A1D /* CarSection.swift */,
+				0B74A5032871EB7400E5B2C2 /* ActionButton.swift */,
+				0B74A5072871EF8B00E5B2C2 /* CategoryView.swift */,
+				0B74A50B2871F2C600E5B2C2 /* AllSettings.swift */,
 			);
 			path = Component;
+			sourceTree = "<group>";
+		};
+		0BE976D0287202F900338FDD /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				0B764CBB2870ABFB001C3A1D /* ContentView.swift */,
+				0BE976D12872032000338FDD /* CarControlView.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,8 +200,13 @@
 				0B764CD02870B5DA001C3A1D /* GeneralButton.swift in Sources */,
 				0B764CBC2870ABFB001C3A1D /* ContentView.swift in Sources */,
 				0B764CBA2870ABFB001C3A1D /* My_TeslaApp.swift in Sources */,
+				0BE976D22872032000338FDD /* CarControlView.swift in Sources */,
 				0B764CD42870B713001C3A1D /* CarSection.swift in Sources */,
+				0B74A50A2871EFAA00E5B2C2 /* ActionItem.swift in Sources */,
 				0B764CCA2870AE57001C3A1D /* VoiceCommandButtonView.swift in Sources */,
+				0B74A5082871EF8B00E5B2C2 /* CategoryView.swift in Sources */,
+				0B74A50C2871F2C600E5B2C2 /* AllSettings.swift in Sources */,
+				0B74A5042871EB7400E5B2C2 /* ActionButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

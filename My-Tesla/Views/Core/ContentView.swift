@@ -7,8 +7,13 @@
 
 import SwiftUI
 
+let quickShortcut:[ActionItem] = [ActionItem(icon: "bolt.fill", text: "Charging"),ActionItem(icon: "fanblades.fill", text:  "Fan On"),ActionItem(icon: "music.note", text: "Media Controls"),ActionItem(icon: "bolt.car", text: "Close Charging Port")]
+
+let recentActions:[ActionItem] = [ActionItem(icon: "arrow.up.square", text: "Open Trunk"),ActionItem(icon: "fanblades", text:  "Fan Off"),ActionItem(icon: "person.fill.viewfinder", text: "Summon")]
+
 struct ContentView: View {
     var body: some View {
+        NavigationView{
         ZStack
         {
             ScrollView{
@@ -18,9 +23,12 @@ struct ContentView: View {
                     CustomDivider()
                     CarSection()
                     CustomDivider()
-                    CategoryView(title: "Quick ShortCuts",showEdit: true)
+                    CategoryView(title: "Quick ShortCuts",showEdit: true, actionItem: quickShortcut)
                     CustomDivider()
-                    CategoryView(title: "Recent Actions",showEdit: false)
+                    CategoryView(title: "Recent Actions",showEdit: false,actionItem: recentActions)
+                    CustomDivider()
+                    AllSettings()
+                    ReorderButton()
                 }
                 .padding()
             }
@@ -30,7 +38,7 @@ struct ContentView: View {
         .frame(maxWidth:.infinity,maxHeight: .infinity)
         .background(Color("DarkGray"))
         .foregroundColor(.white)
-        
+        }
     }
 }
 
@@ -76,20 +84,18 @@ struct CategoryHeader:View{
         }
     }
 }
-
-struct CategoryView:View{
-    var title:String
-    var showEdit : Bool
-    var body:some View{
-        VStack{
-            CategoryHeader(title: title, showEdit: showEdit)
-            ScrollView(.horizontal,showsIndicators: false)
-            {
-                HStack{
-                    
-                }
-            }
+struct ReorderButton:View{
+    var body: some View{
+        Button {
+            
+        } label: {
+                Text("Reorder Groups")
+                    .font(.caption)
+                    .padding(.vertical,8)
+                    .padding(.horizontal,14)
+                    .background(Color.white.opacity(0.05))
+                    .clipShape(Capsule())
         }
-        
+
     }
 }
