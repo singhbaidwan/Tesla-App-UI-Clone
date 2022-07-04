@@ -46,7 +46,10 @@ struct AllSettings: View {
                     SettingBlock(icon: "car.fill", title: "Controls",subtitle: "Car Locked")
                 }
                 SettingBlock(icon: "fanblades.fill", title: "Climate",subtitle: "Interior 68F",backGroundColor: Color.blue)
-                SettingBlock(icon: "location.fill", title: "Location",subtitle: "New Delhi")
+                NavigationLink(destination: LocationView()) {
+                    SettingBlock(icon: "location.fill", title: "Location",subtitle: "New Delhi")
+                }
+                
                 SettingBlock(icon: "checkerboard.shield", title: "Security",subtitle: "0 events detected")
                 SettingBlock(icon: "sparkles", title: "Upgrades",subtitle: "3 updates available")
             }

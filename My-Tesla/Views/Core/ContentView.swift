@@ -12,6 +12,7 @@ let quickShortcut:[ActionItem] = [ActionItem(icon: "bolt.fill", text: "Charging"
 let recentActions:[ActionItem] = [ActionItem(icon: "arrow.up.square", text: "Open Trunk"),ActionItem(icon: "fanblades", text:  "Fan Off"),ActionItem(icon: "person.fill.viewfinder", text: "Summon")]
 
 struct ContentView: View {
+    @State private var openVoiceCommand = false
     var body: some View {
         NavigationView{
         ZStack
@@ -32,8 +33,22 @@ struct ContentView: View {
                 }
                 .padding()
             }
-            
-            VoiceCommandButtonView()
+            if openVoiceCommand{
+                Color.black.opacity(0.5)
+                    .edgesIgnoringSafeArea(.all)
+                    .transition(.opacity)
+                    .onTapGesture {
+                        withAnimation {
+                            openVoiceCommand = false
+                        }
+                    }
+            }
+            VoiceCommandButtonView(open: $openVoiceCommand)
+            if openVoiceCommand{
+                VoiceCommandView(open: $openVoiceCommand, text: "Take me to New Delhi")
+                    .zIndex(1)
+                    .transition(.move(edge: .bottom))
+            }
         }
         .frame(maxWidth:.infinity,maxHeight: .infinity)
         .background(Color("DarkGray"))

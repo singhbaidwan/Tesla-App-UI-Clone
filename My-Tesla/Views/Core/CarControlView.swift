@@ -67,13 +67,7 @@ struct CarLockButton: View {
         Button {
             
         } label: {
-            Label("Unlock Car", systemImage: "lock.fill")
-                .font(.system(size: 14, weight: .medium, design: .default))
-                .frame(maxWidth:.infinity)
-                .padding()
-                .background(Color.white.opacity(0.05))
-                .clipShape(RoundedRectangle(cornerRadius: 14))
-                .overlay(RoundedRectangle(cornerRadius: 14,style: .continuous).stroke(Color.white.opacity(0.1),lineWidth: 0.5))
+       FullButton(icon: "lock.fill", text: "Unlock Car")
         }
 
     }
