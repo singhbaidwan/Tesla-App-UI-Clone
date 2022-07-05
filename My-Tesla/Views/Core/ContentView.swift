@@ -7,12 +7,14 @@
 
 import SwiftUI
 
-let quickShortcut:[ActionItem] = [ActionItem(icon: "bolt.fill", text: "Charging"),ActionItem(icon: "fanblades.fill", text:  "Fan On"),ActionItem(icon: "music.note", text: "Media Controls"),ActionItem(icon: "bolt.car", text: "Close Charging Port")]
-
-let recentActions:[ActionItem] = [ActionItem(icon: "arrow.up.square", text: "Open Trunk"),ActionItem(icon: "fanblades", text:  "Fan Off"),ActionItem(icon: "person.fill.viewfinder", text: "Summon")]
-
 struct ContentView: View {
     @State private var openVoiceCommand = false
+    @State private var openMediaControls = false
+    @State private var openCharging = false
+    
+    @State private var actionText = ""
+    @State private var actionIcon = ""
+    @State private var openAction = false
     var body: some View {
         NavigationView{
         ZStack
@@ -22,30 +24,48 @@ struct ContentView: View {
                     HomeHeaderView()
                         .padding(.top)
                     CustomDivider()
-                    CarSection()
+                    CarSection(openCharging: $openCharging)
                     CustomDivider()
-                    CategoryView(title: "Quick ShortCuts",showEdit: true, actionItem: quickShortcut)
+                    CategoryView(openAction: $openAction, actionText: $actionText, actionIcon: $actionIcon, openCharging: $openCharging, openMedia: $openMediaControls,title: "Quick ShortCuts",showEdit: true, actionItem: quickShortcut)
                     CustomDivider()
-                    CategoryView(title: "Recent Actions",showEdit: false,actionItem: recentActions)
+                    CategoryView(openAction: $openAction, actionText: $actionText, actionIcon: $actionIcon, openCharging: $openCharging, openMedia: $openMediaControls,title: "Recent Actions",showEdit: false,actionItem: recentActions)
                     CustomDivider()
                     AllSettings()
                     ReorderButton()
                 }
                 .padding()
             }
-            if openVoiceCommand{
+            if (openVoiceCommand || openCharging || openMediaControls || openAction){
                 Color.black.opacity(0.5)
                     .edgesIgnoringSafeArea(.all)
                     .transition(.opacity)
                     .onTapGesture {
                         withAnimation {
+                            openCharging = false
                             openVoiceCommand = false
+                            openMediaControls = false
+                            openAction = false 
                         }
                     }
             }
             VoiceCommandButtonView(open: $openVoiceCommand)
             if openVoiceCommand{
                 VoiceCommandView(open: $openVoiceCommand, text: "Take me to New Delhi")
+                    .zIndex(1)
+                    .transition(.move(edge: .bottom))
+            }
+            if openCharging{
+                ChargingView().zIndex(1)
+                    .transition(.move(edge: .bottom))
+                
+            }
+            if openMediaControls{
+                MediaPlayer()
+                    .zIndex(1)
+                    .transition(.move(edge: .bottom))
+            }
+            if openAction && !actionText.isEmpty {
+                ActionNofication(open: $openAction, icon: actionIcon, text: actionText)
                     .zIndex(1)
                     .transition(.move(edge: .bottom))
             }

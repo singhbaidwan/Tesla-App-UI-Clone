@@ -8,15 +8,21 @@
 import SwiftUI
 
 struct CarSection: View {
+    @Binding var openCharging:Bool
     var body: some View {
         VStack(spacing:10){
             HStack(alignment:.center){
-                HStack{
-                    Image(systemName: "battery.75")
-                    Text("250 Miles".uppercased())
+                Button {
+                    withAnimation {
+                        openCharging = true
+                    }
+                } label: {
+                    Label("250 Miles".uppercased(), systemImage: "battery.75")
+                    .font(.system(size: 14, weight: .semibold, design: .rounded))
+                    .foregroundColor(Color("Green"))
+                   
                 }
-                .font(.system(size: 14, weight: .semibold, design: .rounded))
-                .foregroundColor(Color("Green"))
+
                 Spacer()
                 VStack(alignment:.trailing)
                 {
@@ -35,8 +41,8 @@ struct CarSection: View {
     }
 }
 
-struct CarSection_Previews: PreviewProvider {
-    static var previews: some View {
-        CarSection()
-    }
-}
+//struct CarSection_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CarSection()
+//    }
+//}

@@ -34,7 +34,11 @@ struct ActionNofication:View{
                 Text(text)
                     .fontWeight(.medium)
                 Spacer()
-                Button(action: {}) {
+                Button(action: {
+                    withAnimation {
+                        open = false
+                    }
+                }) {
                     Text("Cancel")
                         .font(.subheadline)
                         .opacity(0.5)
